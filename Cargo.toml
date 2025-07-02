@@ -1,0 +1,18 @@
+[package]
+name = "RustTokioChatServer"
+version = "0.1.0"
+edition = "2021"
+# edition = "2024" は、まだ未対応
+
+[dependencies]
+# Tokioランタイム（フル機能を使うためにfullを指定）
+tokio = { version = "1.38", features = ["full"] }
+
+# Arc/RwLockなどでスレッド同期を扱うために標準ライブラリを使用（追加設定不要）
+
+# Unixシグナル対応（tokioのsignalモジュールは"full"に含まれている）
+
+# 日時・タイムゾーン処理用
+chrono = "0.4"
+chrono-tz = "0.8"
+lazy_static = "1.5.0"
