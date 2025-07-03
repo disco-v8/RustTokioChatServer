@@ -22,10 +22,12 @@ pub fn load_config() -> Config { // 設定ファイルからConfigを生成す�
         let line = line.trim(); // 前後の空白を除去
         if let Some(rest) = line.strip_prefix("Listen ") { // Listen行を検出
             let addr = rest.trim(); // アドレス部分を取得
-            if addr.contains(':') { // :が含まれていればアドレス:ポート形式
-                address = Some(addr.to_string()); // アドレス設定
+            if addr.contains(':') {
+                // IPアドレス:ポート形式
+                address = Some(addr.to_string()); // 指定アドレスでバインド（IPv4/IPv6どちらでも可）
             } else {
-                address = Some(format!("127.0.0.1:{}", addr)); // ポート番号のみなら127.0.0.1に
+                // ポート番号のみ指定時はIPv4/IPv6両対応の[::]:ポートでバインド
+                address = Some(format!("[::]:{}", addr));
             }
         } else if let Some(rest) = line.strip_prefix("MaxHandleName ") { // MaxHandleName行を検出
             if let Ok(val) = rest.trim().parse::<usize>() { // 数値変換に成功したら
