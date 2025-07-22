@@ -9,7 +9,7 @@ RustTokioChatServerへの貢献を歓迎します！
 3. ブランチを作成して開発
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/RustTokioChatServer.git
+git clone https://github.com/disco-v8/RustTokioChatServer.git
 cd RustTokioChatServer
 git checkout -b feature/new-feature
 ```

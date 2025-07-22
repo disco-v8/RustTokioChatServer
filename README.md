@@ -25,7 +25,7 @@ IPv4/IPv6デュアルスタック対応で、複数クライアントが同時�
 
 ```bash
 # リポジトリをクローン
-git clone https://github.com/YOUR_USERNAME/RustTokioChatServer.git
+git clone https://github.com/disco-v8/RustTokioChatServer.git
 cd RustTokioChatServer
 
 # ビルド
